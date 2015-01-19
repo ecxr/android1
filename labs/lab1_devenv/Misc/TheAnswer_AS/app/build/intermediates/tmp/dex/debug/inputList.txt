@@ -1,0 +1,2 @@
+C:\classes\android1\labs\lab1_devenv\Misc\TheAnswer_AS\app\build\intermediates\classes\debug
+C:\classes\android1\labs\lab1_devenv\Misc\TheAnswer_AS\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-553f19ba0e7b412ebf940958670bb8cf9927b3a7.jar
