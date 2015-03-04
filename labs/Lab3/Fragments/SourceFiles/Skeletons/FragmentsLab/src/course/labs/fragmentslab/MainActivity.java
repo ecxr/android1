@@ -1,9 +1,12 @@
 package course.labs.fragmentslab;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 public class MainActivity extends Activity implements
 		FriendsFragment.SelectionListener {
@@ -25,10 +28,19 @@ public class MainActivity extends Activity implements
 			
 			mFriendsFragment = new FriendsFragment();
 
-			//TODO 1 - add the FriendsFragment to the fragment_container
-			
-			
-			
+			// XXX TODO 1 - add the FriendsFragment to the fragment_container
+            // Get a reference to the FragmentManager
+            FragmentManager fragmentManager = getFragmentManager();
+
+            // Begin a new FragmentTransaction
+            FragmentTransaction fragmentTransaction = fragmentManager
+                    .beginTransaction();
+
+            // Add the FriendsFragment
+            fragmentTransaction.add(R.id.fragment_container, mFriendsFragment);
+
+            // Commit the FragmentTransaction
+            fragmentTransaction.commit();
 
 		} else {
 
@@ -64,10 +76,20 @@ public class MainActivity extends Activity implements
 
 		if (!isInTwoPaneMode()) {
 
-			//TODO 2 - replace the fragment_container with the FeedFragment
-			
+			// XXX TODO 2 - replace the fragment_container with the FeedFragment
 
-			
+            FragmentManager fragmentManager = getFragmentManager();
+
+            // Begin a new FragmentTransaction
+            FragmentTransaction fragmentTransaction = fragmentManager
+                    .beginTransaction();
+
+            // Add the FriendsFragment
+            fragmentTransaction.replace(R.id.fragment_container, mFeedFragment);
+            fragmentTransaction.addToBackStack(null);
+
+            // Commit the FragmentTransaction
+            fragmentTransaction.commit();
 
 			// execute transaction now
 			getFragmentManager().executePendingTransactions();
