@@ -24,7 +24,7 @@ import course.labs.todomanager.ToDoItem.Priority;
 import course.labs.todomanager.ToDoItem.Status;
 
 public class AddToDoActivity extends Activity {
-
+	
 	// 7 days in milliseconds - 7 * 24 * 60 * 60 * 1000
 	private static final int SEVEN_DAYS = 604800000;
 
@@ -35,6 +35,7 @@ public class AddToDoActivity extends Activity {
 	private static TextView dateView;
 	private static TextView timeView;
 
+	
 	private Date mDate;
 	private RadioGroup mPriorityRadioGroup;
 	private RadioGroup mStatusRadioGroup;
@@ -59,8 +60,7 @@ public class AddToDoActivity extends Activity {
 
 		setDefaultDateTime();
 
-		// OnClickListener for the Date button, calls showDatePickerDialog() to
-		// show
+		// OnClickListener for the Date button, calls showDatePickerDialog() to show
 		// the Date dialog
 
 		final Button datePickerButton = (Button) findViewById(R.id.date_picker_button);
@@ -72,8 +72,8 @@ public class AddToDoActivity extends Activity {
 			}
 		});
 
-		// OnClickListener for the Time button, calls showTimePickerDialog() to
-		// show the Time Dialog
+		// OnClickListener for the Time button, calls showTimePickerDialog() to show
+		// the Time Dialog
 
 		final Button timePickerButton = (Button) findViewById(R.id.time_picker_button);
 		timePickerButton.setOnClickListener(new OnClickListener() {
@@ -84,67 +84,83 @@ public class AddToDoActivity extends Activity {
 			}
 		});
 
-		// OnClickListener for the Cancel Button,
+		// OnClickListener for the Cancel Button, 
 
 		final Button cancelButton = (Button) findViewById(R.id.cancelButton);
 		cancelButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				log("Entered cancelButton.OnClickListener.onClick()");
 
-				Log.i(TAG, "Entered cancelButton.OnClickListener.onClick()");
-
-				// TODO - Indicate result and finish
+				//TODO - XX Implement onClick().
+                Intent data = new Intent();
+                setResult(Activity.RESULT_CANCELED, data);
+                finish();
 
 			}
 		});
 
-		// TODO - Set up OnClickListener for the Reset Button
+		//OnClickListener for the Reset Button
+
 		final Button resetButton = (Button) findViewById(R.id.resetButton);
 		resetButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Log.i(TAG, "Entered resetButton.OnClickListener.onClick()");
+				log("Entered resetButton.OnClickListener.onClick()");
 
-				// TODO - Reset data to default values
+				//TODO - XX Reset data fields to default values
 
+                setDefaultDateTime();
+                mTitleText.setText("");
+                mDefaultStatusButton.setChecked(true);
+                mDefaultPriorityButton.setChecked(true);
 			}
 		});
 
-		// Set up OnClickListener for the Submit Button
-
+		// OnClickListener for the Submit Button
+		// Implement onClick().
+		
 		final Button submitButton = (Button) findViewById(R.id.submitButton);
 		submitButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Log.i(TAG, "Entered submitButton.OnClickListener.onClick()");
+				log("Entered submitButton.OnClickListener.onClick()");
 
-				// gather ToDoItem data
-
-				// TODO - Get the current Priority
+				// Gather ToDoItem data  
+				
+				//TODO - XX Get Priority
 				Priority priority = null;
+                priority = getPriority();
 
-				// TODO - Get the current Status
+				//TODO -  XX Get Status
 				Status status = null;
+                status = getStatus();
 
-				// TODO - Get the current ToDoItem Title
+				//TODO -  XX Title
 				String titleString = null;
+                titleString = mTitleText.getText().toString();
 
-				// Construct the Date string
+				// Date
 				String fullDate = dateString + " " + timeString;
 
 				// Package ToDoItem data into an Intent
 				Intent data = new Intent();
-				ToDoItem.packageIntent(data, titleString, priority, status,
-						fullDate);
+				ToDoItem.packageIntent(data, titleString, priority, status, fullDate);
 
-				// TODO - return data Intent and finish
+				//TODO - XX return data Intent and finish
+				setResult(Activity.RESULT_OK, data);
+                finish();
 
+				
+				
 			}
 		});
 	}
 
-	// Do not modify below this point.
-
+	// Do not modify below here
+	
+	// Use this method to set the default date and time
+	
 	private void setDefaultDateTime() {
 
 		// Default is current time + 7 days
@@ -219,11 +235,6 @@ public class AddToDoActivity extends Activity {
 		}
 	}
 
-	private String getToDoTitle() {
-		return mTitleText.getText().toString();
-	}
-	
-	
 	// DialogFragment used to pick a ToDoItem deadline date
 
 	public static class DatePickerFragment extends DialogFragment implements
@@ -267,7 +278,8 @@ public class AddToDoActivity extends Activity {
 			int minute = c.get(Calendar.MINUTE);
 
 			// Create a new instance of TimePickerDialog and return
-			return new TimePickerDialog(getActivity(), this, hour, minute, true);
+			return new TimePickerDialog(getActivity(), this, hour, minute,
+					true);
 		}
 
 		public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -286,4 +298,14 @@ public class AddToDoActivity extends Activity {
 		DialogFragment newFragment = new TimePickerFragment();
 		newFragment.show(getFragmentManager(), "timePicker");
 	}
+
+	private void log(String msg) {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Log.i(TAG, msg);
+	}
+
 }
