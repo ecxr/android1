@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        android:id="@+id/btnToast"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom Toast"
+        android:id="@+id/btnCustomToast"
+        android:layout_above="@+id/btnNotification"
+        android:layout_alignLeft="@+id/btnCustomNotif"
+        android:layout_alignStart="@+id/btnCustomNotif" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom Notif"
+        android:id="@+id/btnCustomNotif"
+        android:layout_below="@+id/btnCustomToast"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notif"
+        android:id="@+id/btnNotification"
+        android:layout_below="@+id/btnToast"
+        android:layout_alignRight="@+id/btnToast"
+        android:layout_alignEnd="@+id/btnToast" />
+
+</RelativeLayout>
