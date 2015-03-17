@@ -42,12 +42,12 @@
       <file leaf-file-name="BubbleActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab7_GraphicsLab/src/course/labs/graphicslab/BubbleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8092">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9060773" vertical-offset="2171" max-vertical-offset="8058">
+              <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2560#2813#0" expanded="true" />
-                <element signature="e#2802#2803#0" expanded="true" />
+                <element signature="e#2532#2785#0" expanded="true" />
+                <element signature="e#2774#2775#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -449,12 +449,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Lab7_GraphicsLab/src/course/labs/graphicslab/BubbleActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8092">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9060773" vertical-offset="2171" max-vertical-offset="8058">
+          <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2560#2813#0" expanded="true" />
-            <element signature="e#2802#2803#0" expanded="true" />
+            <element signature="e#2532#2785#0" expanded="true" />
+            <element signature="e#2774#2775#0" expanded="true" />
           </folding>
         </state>
       </provider>
