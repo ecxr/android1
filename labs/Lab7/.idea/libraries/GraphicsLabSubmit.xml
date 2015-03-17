@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GraphicsLabSubmit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/GraphicsLabSubmit.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
