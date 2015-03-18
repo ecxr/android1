@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SensorTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="raw_y_string">Y:</string>
+    <string name="raw_x_string">X:</string>
+    <string name="raw_z_string">Z:</string>
+</resources>
